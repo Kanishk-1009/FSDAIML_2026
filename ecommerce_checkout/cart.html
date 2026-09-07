@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div>
+            <h1>Shopping Cart</h1>
+            <p>Review your items before checkout.</p>
+        </div>
+        <a class="cart-button" href="index.html">Continue Shopping</a>
+    </header>
+
+    <main class="cart-page">
+        <div id="cart-loading" class="status-message">Loading cart...</div>
+        <div id="cart-error" class="status-message error" hidden></div>
+
+        <section id="cart-content" hidden>
+            <div class="cart-page-header">
+                <h2>Your Cart</h2>
+                <strong><span id="cart-page-count">0</span> items</strong>
+            </div>
+
+            <div class="cart-layout">
+                <div id="cart-items" class="cart-items"></div>
+
+                <aside class="cart-summary-card">
+                    <h2>Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Items</span>
+                        <strong id="summary-count">0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="summary-subtotal">$0.00</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <strong>Free</strong>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <strong id="summary-total">$0.00</strong>
+                    </div>
+                    <button id="cart-checkout" class="place-order-button full-width" type="button">Proceed to Checkout</button>
+                    <button id="clear-cart" class="cart-item-actions remove-btn full-width" type="button">Clear Cart</button>
+                </aside>
+            </div>
+        </section>
+
+        <section id="empty-cart" class="empty-cart" hidden>
+            <h2>Your cart is empty</h2>
+            <p>Add some products before coming back here.</p>
+            <a class="place-order-button full-width" href="index.html">Start Shopping</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 E-Commerce</p>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

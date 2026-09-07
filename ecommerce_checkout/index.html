@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div>
+            <h1>E-Commerce Website</h1>
+            <p>Browse products, manage your cart, and checkout.</p>
+        </div>
+        <div class="header-actions">
+            <a class="cart-button" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            <button id="checkout-button" class="checkout-button" type="button">Checkout</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="loading" class="status-message">Loading products...</div>
+        <div id="error-message" class="status-message error" hidden></div>
+        <div id="products-container" aria-live="polite"></div>
+    </main>
+
+    <div id="checkout-modal" class="modal" hidden>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+            <button id="close-checkout" class="close-button" type="button" aria-label="Close checkout">&times;</button>
+            <h2 id="checkout-title">Checkout</h2>
+
+            <div id="checkout-empty" class="status-message" hidden>
+                Your cart is empty. Add products before checking out.
+            </div>
+
+            <div id="checkout-content">
+                <section>
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items" class="checkout-items"></div>
+                    <div class="checkout-total">
+                        <span>Total</span>
+                        <strong id="checkout-total">$0.00</strong>
+                    </div>
+                </section>
+
+                <form id="checkout-form">
+                    <h3>Delivery Details</h3>
+                    <div class="form-grid">
+                        <label>Full Name
+                            <input id="full-name" name="fullName" type="text" required autocomplete="name">
+                        </label>
+                        <label>Email
+                            <input id="email" name="email" type="email" required autocomplete="email">
+                        </label>
+                        <label>Phone
+                            <input id="phone" name="phone" type="tel" required autocomplete="tel" pattern="[0-9+() -]{10,}">
+                        </label>
+                        <label>Address
+                            <input id="address" name="address" type="text" required autocomplete="street-address">
+                        </label>
+                        <label>City
+                            <input id="city" name="city" type="text" required autocomplete="address-level2">
+                        </label>
+                        <label>PIN Code
+                            <input id="pin" name="pin" type="text" required inputmode="numeric" pattern="[0-9]{5,6}" autocomplete="postal-code">
+                        </label>
+                    </div>
+
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label>
+                        <label><input type="radio" name="payment" value="Card"> Card</label>
+                        <label><input type="radio" name="payment" value="UPI"> UPI</label>
+                    </div>
+
+                    <button class="place-order-button" type="submit">Place Order</button>
+                </form>
+            </div>
+
+            <div id="order-success" class="order-success" hidden></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 E-Commerce</p>
+    </footer>
+
+    <script src="ecommerce.js"></script>
+</body>
+</html>
