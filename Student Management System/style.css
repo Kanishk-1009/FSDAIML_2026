@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Form */
+
+.student-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.search-section input {
+    height: 45px;
+    padding: 0 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.search-section input:focus {
+    border-color: #4f7cff;
+    box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.1);
+}
+
+.add-btn {
+    grid-column: 1 / -1;
+    height: 46px;
+    border: none;
+    border-radius: 6px;
+    background: #4f7cff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #3d68e6;
+}
+
+.add-btn:active {
+    transform: scale(0.99);
+}
+
+/* Search */
+
+.search-section {
+    margin: 25px 0;
+}
+
+.search-section input {
+    width: 100%;
+}
+
+/* Statistics */
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-box {
+    padding: 18px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-box span {
+    color: #555;
+    font-size: 15px;
+}
+
+.stat-box strong {
+    font-size: 22px;
+    color: #333;
+}
+
+/* Table */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+thead {
+    background: #f1f3f5;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-size: 14px;
+    color: #444;
+}
+
+td {
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+/* Action buttons */
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background: #ffc107;
+    color: #222;
+}
+
+.edit-btn:hover {
+    background: #e9ac00;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+/* Grade colors */
+
+.grade {
+    font-weight: bold;
+}
+
+.grade-a-plus {
+    color: #198754;
+}
+
+.grade-a {
+    color: #20a060;
+}
+
+.grade-b-plus {
+    color: #0d6efd;
+}
+
+.grade-b {
+    color: #2779bd;
+}
+
+.grade-c-plus {
+    color: #f59f00;
+}
+
+.grade-c {
+    color: #fd7e14;
+}
+
+.grade-f {
+    color: #dc3545;
+}
+
+/* Empty */
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    display: none;
+}
+
+/* Grade Range */
+
+.grade-range {
+    width: 260px;
+    margin-left: auto;
+    margin-top: 35px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.grade-range h2 {
+    padding: 14px;
+    font-size: 18px;
+    background: #f1f3f5;
+}
+
+.grade-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+}
+
+.grade-row strong {
+    min-width: 30px;
+    text-align: right;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .student-form {
+        grid-template-columns: 1fr;
+    }
+
+    .add-btn {
+        grid-column: auto;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-range {
+        width: 100%;
+    }
+}

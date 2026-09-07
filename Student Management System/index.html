@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Student Management System</h1>
+        </header>
+
+        <!-- Student Form -->
+        <section class="student-form">
+
+            <div class="form-group">
+                <label for="studentName">Student Name</label>
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter student name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="rollNo">Roll No</label>
+                <input
+                    type="text"
+                    id="rollNo"
+                    placeholder="Enter roll number"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course">
+                    <option value="">Select Course</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="marks">Marks</label>
+                <input
+                    type="number"
+                    id="marks"
+                    min="0"
+                    max="100"
+                    placeholder="0 - 100"
+                >
+            </div>
+
+            <button id="addStudentBtn" class="add-btn">
+                Add Student
+            </button>
+
+        </section>
+
+        <!-- Search -->
+        <section class="search-section">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by Name or Roll No"
+            >
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-box">
+                <span>Total Students:</span>
+                <strong id="totalStudents">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>Average Marks:</span>
+                <strong id="averageMarks">0</strong>
+            </div>
+
+        </section>
+
+        <!-- Student Table -->
+        <section class="table-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTableBody">
+                    <!-- Students will be inserted here -->
+                </tbody>
+            </table>
+
+            <div id="emptyMessage" class="empty-message">
+                No students found.
+            </div>
+
+        </section>
+
+        <!-- Grade Range -->
+        <section class="grade-range">
+
+            <h2>Marks Range</h2>
+
+            <div class="grade-row">
+                <span>90 - 100</span>
+                <strong>A+</strong>
+            </div>
+
+            <div class="grade-row">
+                <span>80 - 89</span>
+                <strong>A</strong>
+            </div>
+
+            <div class="grade-row">
+                <span>70 - 79</span>
+                <strong>B+</strong>
+            </div>
+
+            <div class="grade-row">
+                <span>60 - 69</span>
+                <strong>B</strong>
+            </div>
+
+            <div class="grade-row">
+                <span>50 - 59</span>
+                <strong>C+</strong>
+            </div>
+
+            <div class="grade-row">
+                <span>40 - 49</span>
+                <strong>C</strong>
+            </div>
+
+            <div class="grade-row">
+                <span>Below 40</span>
+                <strong>F</strong>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="system.js"></script>
+</body>
+</html>
